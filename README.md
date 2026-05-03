@@ -90,8 +90,7 @@ public recipe database. No API key setup is required for development.
 ## Components
 
 ### Navbar
-
-Site-wide navigation with search bar. Search input navigates to the search results page on submission.
+Site-wide navigation with search bar and active route highlighting. Search input navigates to `/search?query=...` on submission. Uses NavLink for automatic active state styling.
 
 ### RecipeCard
 
@@ -114,10 +113,17 @@ Site-wide navigation with search bar. Search input navigates to the search resul
 - [React Router Documentation](https://reactrouter.com/)
 - [BrowserRouter — React Router](https://reactrouter.com/en/main/router-components/browser-router)
 - [Routes and Route — React Router](https://reactrouter.com/en/main/components/routes)
+- [NavLink — React Router](https://reactrouter.com/en/main/components/nav-link)
+- [useNavigate — React Router](https://reactrouter.com/en/main/hooks/use-navigate)
+- [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
 
 ### TypeScript
 
 ### JavaScript
+
+### CSS
+- [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
+- [CSS transition — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 
 ### Git
 
