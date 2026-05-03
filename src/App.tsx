@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { FavoritesProvider } from './context/FavoritesContext'
+import { FavoritesProvider } from "./context/FavoritesContext";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
@@ -9,25 +9,11 @@ import FavoritesPage from "./pages/FavoritesPage";
 import SearchPage from "./pages/SearchPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
-
-// CONSOLE: LOADING TEST - DELETE AFTER TESTING //
-import Spinner from './components/Spinner/Spinner'
-import ErrorMessage from './components/ErrorMessage/ErrorMessage'
-// CONSOLE: LOADING TEST - DELETE AFTER TESTING //
-
-
 // Root component - defines all application routes
 function App() {
   return (
     <FavoritesProvider>
       {/* Navbar renders above all route content on every page */}
-
-{/* CONSOLE: LOADING TEST - DELETE AFTER TESTING */}
-<Spinner />
-<ErrorMessage message="Test error message" />
-{/* CONSOLE: LOADING TEST - DELETE AFTER TESTING: */}
-
-
 
       <Navbar />
 
