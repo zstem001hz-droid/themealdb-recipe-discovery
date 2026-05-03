@@ -8,7 +8,7 @@ A recipe discovery single page application built with React and TypeScript. User
 
 ## Features
 
-- [ ] Browse all recipe categories on the home page
+- 📕 Browse all recipe categories on the home page
 - [ ] Dynamic category page showing all recipes in a category
 - [ ] Dynamic recipe detail page with full ingredients and instructions
 - [ ] Add and remove recipes from a personal favorites list
@@ -25,6 +25,7 @@ A recipe discovery single page application built with React and TypeScript. User
 - [Vite](https://vitejs.dev/) — Build tool and dev server
 - [React Router DOM](https://reactrouter.com/) — Client-side routing
 - [TheMealDB API](https://www.themealdb.com/api.php) — Recipe data source
+- [Postman](https://www.postman.com/) — API endpoint testing
 
 ## Project Structure
 
@@ -108,6 +109,32 @@ Generic data fetching hook managing data, loading, and error states. Accepts a U
 ### useLocalStorage
 Synchronizes React state with localStorage using a useState-compatible API. Accepts a key and initial value, returns `[value, setValue]`. Handles JSON serialization, parsing errors, and storage failures gracefully.
 
+## Development Notes
+
+### CSS Animation — Spinner
+The loading spinner uses a pure CSS `@keyframes` animation rather than an external library. The spinning effect is achieved by coloring only the `border-top` of a circular div and rotating it continuously. See `.spinner` and `@keyframes spin` in `App.css`.
+
+```css
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #c0392b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+```
+
+### Postman Testing
+API endpoints were tested manually in Postman before integration. See the API Reference section for all endpoints used in this project.
+
+### API Testing
+All TheMealDB endpoints were verified manually in Postman before React integration. A dedicated collection was created in the `PerScholas — Advanced React` Postman workspace to keep API testing isolated from other projects.
+
+Endpoints tested:
+- `categories.php` — returns 14 category objects
+- `filter.php?c={category}` — returns meals array for a given category
+- `lookup.php?i={id}` — returns full meal details object
+- `search.php?s={query}` — returns meals array matching search term
+
 ## References
 
 ### React
@@ -128,6 +155,7 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 
 ### TypeScript
 - [TypeScript Generics — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+- [TypeScript Interfaces — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 
 ### JavaScript
 - [Fetch API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
@@ -137,6 +165,8 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 - [JSON.stringify — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 - [Array.prototype.filter — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [Array.prototype.some — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+- [Array.prototype.map — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Optional chaining (?.) — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
 ### CSS
 - [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
@@ -145,6 +175,8 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 - [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 - [CSS animation — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 - [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+- [CSS Grid — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [CSS Custom Properties — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 ### Git
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -153,6 +185,8 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
+- [Postman](https://www.postman.com/)
+- [Postman Learning Center](https://learning.postman.com/docs/getting-started/overview/)
 
 ## Known Issues & Future Improvements
 
