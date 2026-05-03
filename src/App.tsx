@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { FavoritesProvider } from './context/FavoritesContext'
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
@@ -11,7 +12,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 // Root component - defines all application routes
 function App() {
   return (
-    <>
+    <FavoritesProvider>
       {/* Navbar renders above all route content on every page */}
       <Navbar />
 
@@ -25,7 +26,7 @@ function App() {
         {/* Catch-all — renders for any unmatched path */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </FavoritesProvider>
   );
 }
 
