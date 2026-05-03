@@ -9,11 +9,26 @@ import FavoritesPage from "./pages/FavoritesPage";
 import SearchPage from "./pages/SearchPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+
+// CONSOLE: LOADING TEST - DELETE AFTER TESTING //
+import Spinner from './components/Spinner/Spinner'
+import ErrorMessage from './components/ErrorMessage/ErrorMessage'
+// CONSOLE: LOADING TEST - DELETE AFTER TESTING //
+
+
 // Root component - defines all application routes
 function App() {
   return (
     <FavoritesProvider>
       {/* Navbar renders above all route content on every page */}
+
+{/* CONSOLE: LOADING TEST - DELETE AFTER TESTING */}
+<Spinner />
+<ErrorMessage message="Test error message" />
+{/* CONSOLE: LOADING TEST - DELETE AFTER TESTING: */}
+
+
+
       <Navbar />
 
       {/* Routes renders only the first matching route */}

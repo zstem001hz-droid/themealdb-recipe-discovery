@@ -95,8 +95,10 @@ Site-wide navigation with search bar and active route highlighting. Search input
 ### RecipeCard
 
 ### Spinner
+CSS-animated loading indicator displayed during all API fetch operations. Rendered by page components while useFetch loading state is true.
 
 ### ErrorMessage
+Displays a styled error message when API requests fail. Receives the error string from useFetch and renders it with a warning indicator in a visually distinct container.
 
 ## Custom Hooks
 
@@ -139,6 +141,10 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 ### CSS
 - [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
 - [CSS transition — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [CSS animation — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+- [CSS animation — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 
 ### Git
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
