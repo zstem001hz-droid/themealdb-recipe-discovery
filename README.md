@@ -101,15 +101,19 @@ Site-wide navigation with search bar and active route highlighting. Search input
 ## Custom Hooks
 
 ### useFetch
+Generic data fetching hook managing data, loading, and error states. Accepts a URL string and returns `{ data, loading, error }`. Uses AbortController cleanup to prevent race conditions on rapid URL changes or component unmounts.
 
 ### useLocalStorage
+Synchronizes React state with localStorage using a useState-compatible API. Accepts a key and initial value, returns `[value, setValue]`. Handles JSON serialization, parsing errors, and storage failures gracefully.
 
 ## References
 
 ### React
+- [useEffect — React Docs](https://react.dev/reference/react/useEffect)
+- [useState — React Docs](https://react.dev/reference/react/useState)
+- [Building Your Own Hooks — React Docs](https://react.dev/learn/reusing-logic-with-custom-hooks)
 
 ### React Router
-
 - [React Router Documentation](https://reactrouter.com/)
 - [BrowserRouter — React Router](https://reactrouter.com/en/main/router-components/browser-router)
 - [Routes and Route — React Router](https://reactrouter.com/en/main/components/routes)
@@ -118,19 +122,23 @@ Site-wide navigation with search bar and active route highlighting. Search input
 - [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
 
 ### TypeScript
+- [TypeScript Generics — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 
 ### JavaScript
+- [Fetch API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [AbortController — MDN](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
+- [localStorage — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [JSON.parse — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+- [JSON.stringify — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 
 ### CSS
 - [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
 - [CSS transition — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 
 ### Git
-
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### Tools
-
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
