@@ -10,9 +10,9 @@ A recipe discovery single page application built with React and TypeScript. User
 
 - 📕 Browse all recipe categories on the home page
 - 📖 Dynamic category page showing all recipes in a category
-- [ ] Dynamic recipe detail page with full ingredients and instructions
-- [ ] Add and remove recipes from a personal favorites list
-- [ ] Favorites persist via localStorage across browser sessions
+- 🍲 Dynamic recipe detail page with full ingredients and instructions
+- 🩶 Add and remove recipes from a personal favorites list
+- ❤️ Favorites persist via localStorage across browser sessions
 - [ ] Search recipes by name from a shared Navbar search bar
 - [ ] Search results page displaying matched recipes
 - [ ] Loading and error states on all data-fetching pages
@@ -94,6 +94,7 @@ public recipe database. No API key setup is required for development.
 Site-wide navigation with search bar and active route highlighting. Search input navigates to `/search?query=...` on submission. Uses NavLink for automatic active state styling.
 
 ### RecipeCard
+Reusable recipe preview card with favorite toggle button. Used on CategoryPage, FavoritesPage, and SearchPage. Links to the recipe detail page. The favorite button uses e.preventDefault() to stop Link navigation when toggling favorites.
 
 ### Spinner
 CSS-animated loading indicator displayed during all API fetch operations. Rendered by page components while useFetch loading state is true.
@@ -120,6 +121,10 @@ The loading spinner uses a pure CSS `@keyframes` animation rather than an extern
   border-top: 5px solid #c0392b;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 ```
 
@@ -157,6 +162,7 @@ Endpoints tested:
 ### TypeScript
 - [TypeScript Generics — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 - [TypeScript Interfaces — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+- [Index Signatures — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
 
 ### JavaScript
 - [Fetch API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
@@ -168,6 +174,8 @@ Endpoints tested:
 - [Array.prototype.some — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 - [Array.prototype.map — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 - [Optional chaining (?.) — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [Array.from — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [String.prototype.trim — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
 
 ### CSS
 - [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
