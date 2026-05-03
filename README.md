@@ -80,16 +80,17 @@ public recipe database. No API key setup is required for development.
 
 **Base URL:** `https://www.themealdb.com/api/json/v1/1/`
 
-| Endpoint | Description |
-|---|---|
-| `categories.php` | All recipe categories |
-| `filter.php?c={category}` | Recipes by category |
-| `lookup.php?i={id}` | Full recipe details by ID |
-| `search.php?s={query}` | Search recipes by name |
+| Endpoint                  | Description               |
+| ------------------------- | ------------------------- |
+| `categories.php`          | All recipe categories     |
+| `filter.php?c={category}` | Recipes by category       |
+| `lookup.php?i={id}`       | Full recipe details by ID |
+| `search.php?s={query}`    | Search recipes by name    |
 
 ## Components
 
 ### Navbar
+
 Site-wide navigation with search bar. Search input navigates to the search results page on submission.
 
 ### RecipeCard
@@ -110,22 +111,26 @@ Site-wide navigation with search bar. Search input navigates to the search resul
 
 ### React Router
 
+- [React Router Documentation](https://reactrouter.com/)
+- [BrowserRouter — React Router](https://reactrouter.com/en/main/router-components/browser-router)
+- [Routes and Route — React Router](https://reactrouter.com/en/main/components/routes)
+
 ### TypeScript
 
 ### JavaScript
 
-
 ### Git
+
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### Tools
+
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
 
 ## Known Issues & Future Improvements
+
 _To be documented as development progresses._
 
 ## Reflections
-
-
