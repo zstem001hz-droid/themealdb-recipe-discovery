@@ -16,7 +16,7 @@ A recipe discovery single page application built with React and TypeScript. User
 - [ ] Search recipes by name from a shared Navbar search bar
 - [ ] Search results page displaying matched recipes
 - [ ] Loading and error states on all data-fetching pages
-- [ ] Responsive, styled UI with reusable components
+- 🍽️ Responsive, styled UI with reusable components
 
 ## Tech Stack
 
@@ -112,6 +112,9 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 - [useEffect — React Docs](https://react.dev/reference/react/useEffect)
 - [useState — React Docs](https://react.dev/reference/react/useState)
 - [Building Your Own Hooks — React Docs](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [createContext — React Docs](https://react.dev/reference/react/createContext)
+- [useContext — React Docs](https://react.dev/reference/react/useContext)
+- [useCallback — React Docs](https://react.dev/reference/react/useCallback)
 
 ### React Router
 - [React Router Documentation](https://reactrouter.com/)
@@ -130,6 +133,8 @@ Synchronizes React state with localStorage using a useState-compatible API. Acce
 - [localStorage — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [JSON.parse — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 - [JSON.stringify — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+- [Array.prototype.filter — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Array.prototype.some — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 ### CSS
 - [CSS Flexbox — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
