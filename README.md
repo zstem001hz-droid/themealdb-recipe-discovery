@@ -240,3 +240,23 @@ Endpoints tested:
 - **Missing meal thumbnails:** TheMealDB occasionally returns meal objects with empty or missing image URLs. Affected recipe cards render without an image. A future improvement would add a fallback placeholder image for missing thumbnails.
 
 ## Reflections
+
+### Challenges
+
+The most technically challenging aspect of this project was managing asynchronous data fetching across multiple pages while maintaining consistent loading and error states. Understanding why `AbortController` is necessary — and what happens without it when a user navigates away before a fetch completes — required revisiting Lesson 2's cleanup patterns in a real-world context rather than an isolated example.
+
+TheMealDB's unconventional data structure also presented challenges. Ingredients stored as numbered properties (`strIngredient1` through `strIngredient20`) rather than an array required a creative solution using `Array.from` with dynamic bracket notation and a TypeScript index signature — patterns that pushed beyond the curriculum into practical problem-solving.
+
+### Design Decisions
+
+`FavoritesContext` was deliberately designed to store only the three fields needed for display (`idMeal`, `strMeal`, `strMealThumb`) rather than full recipe objects. Full recipe details are always fetched fresh from the API when a user visits the detail page — storing the complete object would waste localStorage space and risk displaying stale data if the API updates a recipe.
+
+Interfaces were defined at the component level rather than in a shared `types/index.ts` file. Since each interface describes the shape of a specific API response used in only one place, co-locating the type with the component that uses it is cleaner than maintaining a central types file for types that are never shared.
+
+The `useFetch` hook's URL-as-dependency pattern meant that `CategoryPage` and `SearchPage` automatically re-fetch when their URL parameters change — no additional logic needed. Designing the hook around the URL rather than exposing a manual refetch function kept consuming components simple.
+
+### What I Learned
+
+This project demonstrated how the concepts taught across the Advanced React module — `useState`, `useEffect`, custom hooks, Context API, and React Router — combine into a coherent architecture rather than existing as isolated patterns. Each lesson's concept has a specific role: hooks handle reusable logic, context handles global state, and routing handles navigation — and they compose cleanly when each is used for its intended purpose.
+
+Building `useFetch` and `useLocalStorage` before the page components reinforced why custom hooks exist — by the time `HomePage` was built, fetching data and persisting favorites required one line each, with all complexity hidden in the hooks. The value of that abstraction only becomes clear when you see how much simpler the consuming code is.
