@@ -13,8 +13,8 @@ A recipe discovery single page application built with React and TypeScript. User
 - 🍲 Dynamic recipe detail page with full ingredients and instructions
 - 🩶 Add and remove recipes from a personal favorites list
 - ❤️ Favorites persist via localStorage across browser sessions
-- [ ] Search recipes by name from a shared Navbar search bar
-- [ ] Search results page displaying matched recipes
+- 🥩 Search recipes by name from a shared Navbar search bar
+- 🍜 Search results page displaying matched recipes
 - [ ] Loading and error states on all data-fetching pages
 - 🍽️ Responsive, styled UI with reusable components
 
@@ -158,6 +158,7 @@ Endpoints tested:
 - [useNavigate — React Router](https://reactrouter.com/en/main/hooks/use-navigate)
 - [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
 - [useParams — React Router](https://reactrouter.com/en/main/hooks/use-react-router)
+- [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
 
 ### TypeScript
 - [TypeScript Generics — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
