@@ -15,7 +15,7 @@ A recipe discovery single page application built with React and TypeScript. User
 - ❤️ Favorites persist via localStorage across browser sessions
 - 🥩 Search recipes by name from a shared Navbar search bar
 - 🍜 Search results page displaying matched recipes
-- [ ] Loading and error states on all data-fetching pages
+- ⏳ Loading and error states on all data-fetching pages
 - 🍽️ Responsive, styled UI with reusable components
 
 ## Tech Stack
@@ -187,6 +187,8 @@ Endpoints tested:
 - [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 - [CSS Grid — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [CSS Custom Properties — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [CSS Media Queries — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries)
+- [CSS Box Shadow — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 
 ### Git
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
