@@ -237,5 +237,6 @@ Endpoints tested:
 - **Recipe detail flash:** A brief "Recipe not found" message appears during initial load in development due to React StrictMode double-rendering. This does not occur in production builds.
 - **Ingredient cap:** Ingredient list is capped at 15 items — TheMealDB supports up to 20 per recipe. A future improvement would extend this to 20.
 - **No pagination:** Category and search results pages display all results at once. Pagination would improve performance and usability on large result sets.
+- **Missing meal thumbnails:** TheMealDB occasionally returns meal objects with empty or missing image URLs. Affected recipe cards render without an image. A future improvement would add a fallback placeholder image for missing thumbnails.
 
 ## Reflections
