@@ -42,7 +42,9 @@ function SearchPage() {
 
       {/* No results state — TheMealDB returns null meals when nothing matches */}
       {data?.meals === null && (
-        <p>No recipes found for "{query}". Try a different search term.</p>
+        <p>
+          No recipes found for "{query}". Please try a different search term.
+        </p>
       )}
 
       {/* Results grid — reuses meal-grid and RecipeCard */}

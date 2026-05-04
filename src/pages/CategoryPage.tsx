@@ -52,7 +52,7 @@ function CategoryPage() {
 
       {/* Handles case where category exists but has no meals */}
       {data?.meals === null && (
-        <p>Apologies, we do not have recipies for your desired categories.</p>
+        <p>    No recipes found for ‘{query}’. Try a different keyword or remove filters.</p>
       )}
     </main>
   );

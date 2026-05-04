@@ -48,8 +48,6 @@ src/
 │   ├── FavoritesPage.tsx ← saved favorites list
 │   ├── SearchPage.tsx    ← search results
 │   └── NotFoundPage.tsx  ← 404 catch-all
-├── types/
-│   └── index.ts          ← all TypeScript interfaces
 ├── App.css               ← global application styles
 ├── App.tsx               ← root component with routing
 ├── index.css             ← base reset and font styles
@@ -76,8 +74,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## API Reference
 
-This project uses [TheMealDB API](https://www.themealdb.com/api.php) — a free
-public recipe database. No API key setup is required for development.
+This project uses [TheMealDB API](https://www.themealdb.com/api.php) — a free public recipe database. No API key setup is required for development.
 
 **Base URL:** `https://www.themealdb.com/api/json/v1/1/`
 
@@ -93,22 +90,63 @@ public recipe database. No API key setup is required for development.
 ### Navbar
 Site-wide navigation with search bar and active route highlighting. Search input navigates to `/search?query=...` on submission. Uses NavLink for automatic active state styling.
 
+**Example:**
+
+```
+<Navbar />
+```
+
 ### RecipeCard
 Reusable recipe preview card with favorite toggle button. Used on CategoryPage, FavoritesPage, and SearchPage. Links to the recipe detail page. The favorite button uses e.preventDefault() to stop Link navigation when toggling favorites.
+
+**Example:**
+
+```
+<RecipeCard
+  idMeal="52772"
+  strMeal="Apple Frangipan Tart"
+  strMealThumb="https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg"
+/>
+```
 
 ### Spinner
 CSS-animated loading indicator displayed during all API fetch operations. Rendered by page components while useFetch loading state is true.
 
+**Example:**
+
+```
+if (loading) return <Spinner />
+```
+
 ### ErrorMessage
 Displays a styled error message when API requests fail. Receives the error string from useFetch and renders it with a warning indicator in a visually distinct container.
+
+**Example:**
+
+```
+if (error) return <ErrorMessage message={error} />
+```
 
 ## Custom Hooks
 
 ### useFetch
 Generic data fetching hook managing data, loading, and error states. Accepts a URL string and returns `{ data, loading, error }`. Uses AbortController cleanup to prevent race conditions on rapid URL changes or component unmounts.
 
+**Example:**
+```
+const { data, loading, error } = useFetch<CategoriesResponse>(
+  'https://www.themealdb.com/api/json/v1/1/categories.php'
+)
+```
+
 ### useLocalStorage
 Synchronizes React state with localStorage using a useState-compatible API. Accepts a key and initial value, returns `[value, setValue]`. Handles JSON serialization, parsing errors, and storage failures gracefully.
+
+**Example:**
+
+```
+const [favorites, setFavorites] = useLocalStorage<FavoriteRecipe[]>('favorites', [])
+```
 
 ## Development Notes
 
@@ -128,11 +166,8 @@ The loading spinner uses a pure CSS `@keyframes` animation rather than an extern
 }
 ```
 
-### Postman Testing
-API endpoints were tested manually in Postman before integration. See the API Reference section for all endpoints used in this project.
-
 ### API Testing
-All TheMealDB endpoints were verified manually in Postman before React integration. A dedicated collection was created in the `PerScholas — Advanced React` Postman workspace to keep API testing isolated from other projects.
+All TheMealDB endpoints were verified manually in Postman before React integration. A dedicated collection was created in an `Academic Sandbox` Postman workspace to keep API testing isolated from other personal projects.
 
 Endpoints tested:
 - `categories.php` — returns 14 category objects
@@ -157,8 +192,7 @@ Endpoints tested:
 - [NavLink — React Router](https://reactrouter.com/en/main/components/nav-link)
 - [useNavigate — React Router](https://reactrouter.com/en/main/hooks/use-navigate)
 - [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
-- [useParams — React Router](https://reactrouter.com/en/main/hooks/use-react-router)
-- [useSearchParams — React Router](https://reactrouter.com/en/main/hooks/use-search-params)
+- [useParams — React Router](https://reactrouter.com/en/main/hooks/use-params)
 
 ### TypeScript
 - [TypeScript Generics — TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/generics.html)
@@ -183,25 +217,25 @@ Endpoints tested:
 - [CSS transition — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 - [CSS animation — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 - [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
-- [CSS animation — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
-- [@keyframes — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 - [CSS Grid — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [CSS Custom Properties — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - [CSS Media Queries — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries)
 - [CSS Box Shadow — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 
-### Git
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-
-### Tools
+### Tools & APIs
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [TheMealDB API Documentation](https://www.themealdb.com/api.php)
 - [Postman](https://www.postman.com/)
 - [Postman Learning Center](https://learning.postman.com/docs/getting-started/overview/)
 
+### Git
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
 ## Known Issues & Future Improvements
 
-_To be documented as development progresses._
+- **Recipe detail flash:** A brief "Recipe not found" message appears during initial load in development due to React StrictMode double-rendering. This does not occur in production builds.
+- **Ingredient cap:** Ingredient list is capped at 15 items — TheMealDB supports up to 20 per recipe. A future improvement would extend this to 20.
+- **No pagination:** Category and search results pages display all results at once. Pagination would improve performance and usability on large result sets.
 
 ## Reflections
