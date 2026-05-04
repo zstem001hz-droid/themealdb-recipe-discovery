@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Spinner from "../components/Spinner/Spinner";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
+import RecipeCard from "../components/RecipeCard/RecipeCard";
 
 // Shape of a single meal returned by the category filter endpoint
 interface CategoryMeal {
@@ -38,26 +39,21 @@ function CategoryPage() {
         ⬅️ Return to Categories
       </Link>
 
-      {/* Meal grid — each card links to the recipe detail page */}
       <div className="meal-grid">
         {data?.meals?.map((meal) => (
-          <Link
-            to={`/recipe/${meal.idMeal}`}
+          <RecipeCard
             key={meal.idMeal}
-            className="meal-card"
-          >
-            <img
-              src={meal.strMealThumb}
-              alt={meal.strMeal}
-              className="meal-img"
-            />
-            <h3>{meal.strMeal}</h3>
-          </Link>
+            idMeal={meal.idMeal}
+            strMeal={meal.strMeal}
+            strMealThumb={meal.strMealThumb}
+          />
         ))}
       </div>
 
       {/* Handles case where category exists but has no meals */}
-      {data?.meals === null && <p>Apologies, we do not have recipies for your desired categories.</p>}
+      {data?.meals === null && (
+        <p>Apologies, we do not have recipies for your desired categories.</p>
+      )}
     </main>
   );
 }
