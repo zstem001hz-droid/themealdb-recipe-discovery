@@ -5,7 +5,7 @@ function ErrorMessage({ message }: { message: string }) {
     <div className="error-container">
       <p className="error-message">⚠️ {message}</p>
     </div>
-  )
+  );
 }
 
-export default ErrorMessage
+export default ErrorMessage;
