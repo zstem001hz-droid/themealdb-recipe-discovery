@@ -1,5 +1,11 @@
 # 🥙 TheMealDB Recipe Discovery 🍽️
 
+![React](https://img.shields.io/badge/React-19.x-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![Vite](https://img.shields.io/badge/Vite-6.x-purple)
+![React Router](https://img.shields.io/badge/React_Router-7.x-red)
+![TheMealDB](https://img.shields.io/badge/API-TheMealDB-orange)
+
 **Author:** Zac White
 
 ## Overview
@@ -26,6 +32,16 @@ A recipe discovery single page application built with React and TypeScript. User
 - [React Router DOM](https://reactrouter.com/) — Client-side routing
 - [TheMealDB API](https://www.themealdb.com/api.php) — Recipe data source
 - [Postman](https://www.postman.com/) — API endpoint testing
+
+## Application Flow
+
+1. User lands on HomePage — all recipe categories fetched from TheMealDB API via `useFetch`
+2. User selects a category — CategoryPage fetches all recipes in that category
+3. User selects a recipe — RecipeDetailPage fetches full ingredients and instructions
+4. User adds recipe to favorites — `FavoritesContext` updates global state
+5. Favorites persisted to localStorage via `useLocalStorage` — survives browser refresh
+6. User searches by name — SearchPage fetches and displays matched recipes
+7. Loading and error states handled globally via `Spinner` and `ErrorMessage` components
 
 ## Project Structure
 
